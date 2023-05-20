@@ -1,0 +1,33 @@
+{
+  "name": "github-stone-admin-request-code-review-from-squads",
+  "private": true,
+  "license": "MIT",
+  "repository": "https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads",
+  "author": {
+    "name": "Jonathan Seibt",
+    "email": "hey@jonathanseibt.com"
+  },
+  "engines": {
+    "node": "18",
+    "pnpm": "8"
+  },
+  "scripts": {
+    "prepare": "pnpm is-ci || pnpm husky install",
+    "lint": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:types",
+    "lint:prettier": "pnpm prettier . --write --loglevel error",
+    "lint:eslint": "pnpm eslint . --fix --ext .js,.jsx,.ts,.tsx",
+    "lint:types": "pnpm tsc --noEmit",
+    "build": "pnpm esbuild src/*.ts --outdir=build --allow-overwrite --minify --banner:js=\"$(pnpm cross-cat src/tampermonkey.txt)\""
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.59.6",
+    "@typescript-eslint/parser": "5.59.6",
+    "cross-cat": "1.0.0",
+    "esbuild": "0.17.19",
+    "eslint": "8.40.0",
+    "husky": "8.0.3",
+    "is-ci": "3.0.1",
+    "prettier": "2.8.8",
+    "typescript": "5.0.4"
+  }
+}
