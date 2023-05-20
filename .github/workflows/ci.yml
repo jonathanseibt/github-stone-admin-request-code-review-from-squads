@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - uses: actions/checkout@v3
+
+      - run: pnpm i --frozen-lockfile
+
+      - run: pnpm lint
+
+      - run: pnpm build
+
+      - uses: exuanbo/actions-deploy-gist@v1
+        with:
+          token: ${{ secrets.GISTS }}
+          gist_id: 8c233a74ac06d1980aadaea5e46833eb
+          file_path: build/github-stone-admin-request-code-review-from-squads.js
