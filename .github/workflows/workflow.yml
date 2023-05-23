@@ -1,19 +1,21 @@
-name: CI
-
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - 'main'
+    paths-ignore:
+      - '.husky/**'
+      - '.vscode/**'
+      - 'LICENSE'
+      - 'README.md'
 
 jobs:
-  ci:
-    name: CI
+  workflow:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18
 
       - uses: pnpm/action-setup@v2
         with:
