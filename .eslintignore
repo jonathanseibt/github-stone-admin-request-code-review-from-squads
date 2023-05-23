@@ -1,5 +1,4 @@
 node_modules
-.pnpm
 build
 pnpm-lock.yaml
 LICENSE

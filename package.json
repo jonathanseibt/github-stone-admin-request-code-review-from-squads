@@ -8,16 +8,16 @@
     "email": "hey@jonathanseibt.com"
   },
   "engines": {
-    "node": "18",
-    "pnpm": "8"
+    "node": "^18",
+    "pnpm": "^8"
   },
   "scripts": {
-    "prepare": "pnpm is-ci || pnpm husky install",
+    "prepare": "is-ci || husky install",
     "lint": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:types",
-    "lint:prettier": "pnpm prettier . --write --loglevel error",
-    "lint:eslint": "pnpm eslint . --fix --ext .js,.jsx,.ts,.tsx",
-    "lint:types": "pnpm tsc --noEmit",
-    "build": "pnpm esbuild src/*.ts --outdir=build --allow-overwrite --minify --banner:js=\"$(pnpm cross-cat src/tampermonkey.txt)\""
+    "lint:prettier": "prettier . --write --loglevel error",
+    "lint:eslint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
+    "lint:types": "tsc --noEmit",
+    "build": "esbuild src/*.ts --outdir=build --allow-overwrite --minify --banner:js=\"$(cross-cat src/tampermonkey.txt)\""
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.59.6",
