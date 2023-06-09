@@ -69,20 +69,5 @@
         ]
       }
     ]
-  },
-  "overrides": [
-    {
-      "files": [
-        ".prettierrc",
-        ".eslintrc"
-      ],
-      "rules": {
-        "quotes": [
-          "error",
-          "double"
-        ],
-        "no-unused-expressions": "off"
-      }
-    }
-  ]
+  }
 }

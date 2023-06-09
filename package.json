@@ -13,10 +13,10 @@
   },
   "scripts": {
     "prepare": "is-ci || husky install",
-    "lint": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:types",
+    "lint": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:tsc",
     "lint:prettier": "prettier . --write --loglevel error",
-    "lint:eslint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
-    "lint:types": "tsc --noEmit",
+    "lint:eslint": "eslint . --fix --ext .ts --max-warnings 0",
+    "lint:tsc": "tsc --noEmit",
     "build": "esbuild src/*.ts --outdir=build --allow-overwrite --minify --banner:js=\"$(cross-cat src/tampermonkey.txt)\""
   },
   "devDependencies": {

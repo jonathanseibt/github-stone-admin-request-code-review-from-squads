@@ -11,7 +11,7 @@
   "overrides": [
     {
       "files": [
-        "**/*.json",
+        "*.json",
         ".prettierrc",
         ".eslintrc"
       ],
