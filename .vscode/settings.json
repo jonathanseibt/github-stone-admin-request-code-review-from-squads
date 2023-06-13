@@ -1,6 +1,12 @@
 {
+  "files.associations": {
+    "package.json": "json",
+    ".env": "dotenv",
+    ".env.*": "dotenv",
+    ".*ignore": "ignore"
+  },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.enablePromptUseWorkspaceTsdk": false,
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
   "editor.renderControlCharacters": true,
@@ -29,10 +35,5 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.associations": {
-    ".env": "dotenv",
-    ".env.*": "dotenv",
-    ".*ignore": "ignore"
   }
 }

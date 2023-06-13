@@ -1,4 +1,7 @@
-node_modules
-build
-pnpm-lock.yaml
+# Don't forget: when making changes down here, sync them with the .prettierignore file.
 LICENSE
+pnpm-lock.yaml
+
+# Don't forget: when making changes down here, sync them with the .gitignore file.
+build
+node_modules

@@ -18,6 +18,14 @@
       "options": {
         "printWidth": 0
       }
+    },
+    {
+      "files": [
+        "*.md"
+      ],
+      "options": {
+        "printWidth": 99999
+      }
     }
   ]
 }

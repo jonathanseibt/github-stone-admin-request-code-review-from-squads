@@ -1,2 +1,3 @@
-node_modules
+# Don't forget: when making changes down here, sync them with the .eslintignore and .prettierignore files.
 build
+node_modules
