@@ -4,6 +4,7 @@
     Ermerson: 95234159,
     Guh: 24482087,
     Hoffmann: 37714181,
+    Joao: 69815066,
     Ka: 3419801,
     Lucas: 7409802,
     Male: 56513919,
@@ -25,9 +26,9 @@
     whenHide('#reviewers-select-menu .select-menu-list svg.anim-rotate', (): void => {
       whenShow('#reviewers-select-menu > details-menu .select-menu-list', (element): void => {
         if (!get('#squad-platform-ux-button')) {
-          element.innerHTML = buildReviewersButtonHtml('squad-platform-ux-button', 'Squad Platform & UX', 'Lucas, Paulinho, Vini') + element.innerHTML;
+          element.innerHTML = buildReviewersButtonHtml('squad-platform-ux-button', 'Squad Platform & UX', 'João, Lucas, Paulinho, Vini') + element.innerHTML;
           event('click', '#squad-platform-ux-button', (): void => {
-            requestCodeReviewFrom([REVIEWERS.Lucas, REVIEWERS.Paulinho, REVIEWERS.Vini]);
+            requestCodeReviewFrom([REVIEWERS.Joao, REVIEWERS.Lucas, REVIEWERS.Paulinho, REVIEWERS.Vini]);
           });
         }
 
