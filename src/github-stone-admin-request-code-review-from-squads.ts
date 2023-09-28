@@ -27,30 +27,22 @@
       whenShow('#reviewers-select-menu > details-menu .select-menu-list', (element): void => {
         if (!get('#squad-platform-ux-button')) {
           element.innerHTML = buildReviewersButtonHtml('squad-platform-ux-button', 'Squad Platform & UX', 'João, Lucas, Paulinho, Vini') + element.innerHTML;
-          event('click', '#squad-platform-ux-button', (): void => {
-            requestCodeReviewFrom([REVIEWERS.Joao, REVIEWERS.Lucas, REVIEWERS.Paulinho, REVIEWERS.Vini]);
-          });
+          event('click', '#squad-platform-ux-button', (): void => requestCodeReviewFrom([REVIEWERS.Joao, REVIEWERS.Lucas, REVIEWERS.Paulinho, REVIEWERS.Vini]));
         }
 
         if (!get('#squad-banking-capital-button')) {
           element.innerHTML = buildReviewersButtonHtml('squad-banking-capital-button', 'Squad Banking & Capital', 'Hoffmann, Malê, Phelipe, Thiago, Vini') + element.innerHTML;
-          event('click', '#squad-banking-capital-button', (): void => {
-            requestCodeReviewFrom([REVIEWERS.Hoffmann, REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiago, REVIEWERS.Vini]);
-          });
+          event('click', '#squad-banking-capital-button', (): void => requestCodeReviewFrom([REVIEWERS.Hoffmann, REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiago, REVIEWERS.Vini]));
         }
 
         if (!get('#squad-risk-lifecycle-button')) {
           element.innerHTML = buildReviewersButtonHtml('squad-risk-lifecycle-button', 'Squad Risk & Lifecycle', 'Ermerson, Guh, Matheus') + element.innerHTML;
-          event('click', '#squad-risk-lifecycle-button', (): void => {
-            requestCodeReviewFrom([REVIEWERS.Ermerson, REVIEWERS.Guh, REVIEWERS.Matheus]);
-          });
+          event('click', '#squad-risk-lifecycle-button', (): void => requestCodeReviewFrom([REVIEWERS.Ermerson, REVIEWERS.Guh, REVIEWERS.Matheus]));
         }
 
         if (!get('#squad-payments-lifecycle-button')) {
           element.innerHTML = buildReviewersButtonHtml('squad-payments-lifecycle-button', 'Squad Payments & Lifecycle', 'Amandinha, Ka, Pitta, Seibt, Sidney') + element.innerHTML;
-          event('click', '#squad-payments-lifecycle-button', (): void => {
-            requestCodeReviewFrom([REVIEWERS.Amandinha, REVIEWERS.Ka, REVIEWERS.Pitta, REVIEWERS.Seibt, REVIEWERS.Sidney]);
-          });
+          event('click', '#squad-payments-lifecycle-button', (): void => requestCodeReviewFrom([REVIEWERS.Amandinha, REVIEWERS.Ka, REVIEWERS.Pitta, REVIEWERS.Seibt, REVIEWERS.Sidney]));
         }
       });
     });
@@ -70,8 +62,13 @@
   }
 
   function requestCodeReviewFrom(reviewers: Array<(typeof REVIEWERS)[keyof typeof REVIEWERS]>): void {
-    reviewers.forEach((reviewer): void => get(`#reviewers-select-menu input[value="${reviewer}"]:not(:checked)`)?.click());
-    get('[data-menu-trigger=reviewers-select-menu]')?.click();
+    reviewers.forEach((reviewer): void => {
+      const button = get(`#reviewers-select-menu input[value="${reviewer}"]:not(:checked)`);
+      if (button) button.click();
+    });
+
+    const menu = get('[data-menu-trigger=reviewers-select-menu]');
+    if (menu) menu.click();
   }
 
   /**
