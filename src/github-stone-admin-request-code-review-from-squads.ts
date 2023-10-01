@@ -1,6 +1,7 @@
 ((): void => {
   const REVIEWERS = {
     Amandinha: 71740023,
+    Breno: 29927043,
     Ermerson: 95234159,
     Guh: 24482087,
     Hoffmann: 37714181,
@@ -36,8 +37,8 @@
         }
 
         if (!get('#squad-risk-lifecycle-button')) {
-          element.innerHTML = buildReviewersButtonHtml('squad-risk-lifecycle-button', 'Squad Risk & Lifecycle', 'Ermerson, Guh, Matheus') + element.innerHTML;
-          event('click', '#squad-risk-lifecycle-button', (): void => requestCodeReviewFrom([REVIEWERS.Ermerson, REVIEWERS.Guh, REVIEWERS.Matheus]));
+          element.innerHTML = buildReviewersButtonHtml('squad-risk-lifecycle-button', 'Squad Risk & Lifecycle', 'Breno, Ermerson, Guh, Matheus') + element.innerHTML;
+          event('click', '#squad-risk-lifecycle-button', (): void => requestCodeReviewFrom([REVIEWERS.Breno, REVIEWERS.Ermerson, REVIEWERS.Guh, REVIEWERS.Matheus]));
         }
 
         if (!get('#squad-payments-lifecycle-button')) {
