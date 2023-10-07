@@ -4,6 +4,7 @@
     "target": "es2020",
     "module": "commonjs",
     "strict": true,
+    //
     "removeComments": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
@@ -16,10 +17,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "isolatedModules": true,
+    "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true
   },
   "include": [
     "**/*.ts"
