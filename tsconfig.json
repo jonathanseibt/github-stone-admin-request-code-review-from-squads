@@ -1,34 +1,7 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base",
   "compilerOptions": {
     "target": "es2020",
-    "module": "commonjs",
-    "strict": true,
-    //
-    "removeComments": true,
-    "allowUnusedLabels": false,
-    "allowUnreachableCode": false,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "isolatedModules": true,
-    "allowJs": true,
-    "checkJs": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "verbatimModuleSyntax": true,
-    "resolveJsonModule": true
-  },
-  "include": [
-    "**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "module": "commonjs"
+  }
 }
