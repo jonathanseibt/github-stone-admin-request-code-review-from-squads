@@ -14,7 +14,7 @@
     Pitta: 21087503,
     Seibt: 56838120,
     Sidney: 76785419,
-    Thiago: 65300263,
+    Thiagao: 65300263,
     Vini: 17788722,
   } as const
 
@@ -32,7 +32,7 @@
 
         if (!get('#squad-banking-capital-button')) {
           element.innerHTML = buildReviewersButtonHtml('squad-banking-capital-button', 'Squad Banking & Capital', 'Hoffmann, Malê, Phelipe, Thiago, Vini') + element.innerHTML
-          event('click', '#squad-banking-capital-button', (): void => requestCodeReviewFrom([REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiago, REVIEWERS.Vini]))
+          event('click', '#squad-banking-capital-button', (): void => requestCodeReviewFrom([REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiagao, REVIEWERS.Vini]))
         }
 
         if (!get('#squad-risk-lifecycle-button')) {
