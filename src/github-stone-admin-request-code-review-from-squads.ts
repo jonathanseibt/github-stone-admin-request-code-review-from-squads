@@ -27,7 +27,7 @@
       whenShow('#reviewers-select-menu > details-menu .select-menu-list', (element): void => {
         if (!get('#squad-platform-ux-button')) {
           element.innerHTML = buildReviewersButtonHtml('squad-platform-ux-button', 'Squad Platform & UX', 'João, Lucas, Paulinho, Vini') + element.innerHTML
-          event('click', '#squad-platform-ux-button', (): void => requestCodeReviewFrom([REVIEWERS.Joao, REVIEWERS.Lucas, REVIEWERS.Paulinho, REVIEWERS.Vini]))
+          event('click', '#squad-platform-ux-button', (): void => requestCodeReviewFrom([REVIEWERS.Joao, REVIEWERS.Lucas, REVIEWERS.Paulinho]))
         }
 
         if (!get('#squad-banking-capital-button')) {
