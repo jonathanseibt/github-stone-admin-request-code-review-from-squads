@@ -4,6 +4,7 @@
     Breno: 29927043,
     Ermerson: 95234159,
     Guh: 24482087,
+    Gustavo: 61552991,
     Joao: 69815066,
     Ka: 3419801,
     Lucas: 7409802,
@@ -32,7 +33,7 @@
 
         if (!get('#squad-banking-capital-button')) {
           element.innerHTML = buildReviewersButtonHtml('squad-banking-capital-button', 'Squad Banking & Capital', 'Hoffmann, Malê, Phelipe, Thiago, Vini') + element.innerHTML
-          event('click', '#squad-banking-capital-button', (): void => requestCodeReviewFrom([REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiagao, REVIEWERS.Vini]))
+          event('click', '#squad-banking-capital-button', (): void => requestCodeReviewFrom([REVIEWERS.Gustavo, REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiagao, REVIEWERS.Vini]))
         }
 
         if (!get('#squad-risk-lifecycle-button')) {

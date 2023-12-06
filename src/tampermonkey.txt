@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub Stone Admin | Request review from squads
-// @version      3.9.0
+// @version      3.10.0
 // @description  New buttons to automatically request review from squads
 // @author       Jonathan Seibt (https://github.com/jonathanseibt)
 // @source       https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads
