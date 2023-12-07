@@ -31,14 +31,14 @@
           event('click', '#squad-platform-ux-button', (): void => requestCodeReviewFrom([REVIEWERS.Joao, REVIEWERS.Lucas, REVIEWERS.Paulinho]))
         }
 
-        if (!get('#squad-banking-capital-button')) {
-          element.innerHTML = buildReviewersButtonHtml('squad-banking-capital-button', 'Squad Banking & Capital', 'Gustavo, Malê, Phelipe, Thiagão, Vini') + element.innerHTML
-          event('click', '#squad-banking-capital-button', (): void => requestCodeReviewFrom([REVIEWERS.Gustavo, REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiagao, REVIEWERS.Vini]))
+        if (!get('#squad-banking-credit-insurance-button')) {
+          element.innerHTML = buildReviewersButtonHtml('squad-banking-credit-insurance-button', 'Squad Banking & Credit & Insurance', 'Gustavo, Malê, Phelipe, Thiagão, Vini') + element.innerHTML
+          event('click', '#squad-banking-credit-insurance-button', (): void => requestCodeReviewFrom([REVIEWERS.Gustavo, REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiagao, REVIEWERS.Vini]))
         }
 
-        if (!get('#squad-risk-lifecycle-button')) {
-          element.innerHTML = buildReviewersButtonHtml('squad-risk-lifecycle-button', 'Squad Risk & Lifecycle', 'Breno, Ermerson, Guh, Matheus') + element.innerHTML
-          event('click', '#squad-risk-lifecycle-button', (): void => requestCodeReviewFrom([REVIEWERS.Breno, REVIEWERS.Ermerson, REVIEWERS.Guh, REVIEWERS.Matheus]))
+        if (!get('#squad-risk-stoneaccount-button')) {
+          element.innerHTML = buildReviewersButtonHtml('squad-risk-stoneaccount-button', 'Squad Risk & Stone Account', 'Breno, Ermerson, Guh, Matheus') + element.innerHTML
+          event('click', '#squad-risk-stoneaccount-button', (): void => requestCodeReviewFrom([REVIEWERS.Breno, REVIEWERS.Ermerson, REVIEWERS.Guh, REVIEWERS.Matheus]))
         }
 
         if (!get('#squad-payments-lifecycle-button')) {
