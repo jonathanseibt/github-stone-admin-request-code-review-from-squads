@@ -27,12 +27,12 @@
     whenHide('#reviewers-select-menu .select-menu-list svg.anim-rotate', (): void => {
       whenShow('#reviewers-select-menu > details-menu .select-menu-list', (element): void => {
         if (!get('#squad-platform-ux-button')) {
-          element.innerHTML = buildReviewersButtonHtml('squad-platform-ux-button', 'Squad Platform & UX', 'João, Lucas, Paulinho, Vini') + element.innerHTML
+          element.innerHTML = buildReviewersButtonHtml('squad-platform-ux-button', 'Squad Platform & UX', 'João, Lucas, Paulinho') + element.innerHTML
           event('click', '#squad-platform-ux-button', (): void => requestCodeReviewFrom([REVIEWERS.Joao, REVIEWERS.Lucas, REVIEWERS.Paulinho]))
         }
 
         if (!get('#squad-banking-capital-button')) {
-          element.innerHTML = buildReviewersButtonHtml('squad-banking-capital-button', 'Squad Banking & Capital', 'Hoffmann, Malê, Phelipe, Thiago, Vini') + element.innerHTML
+          element.innerHTML = buildReviewersButtonHtml('squad-banking-capital-button', 'Squad Banking & Capital', 'Gustavo, Malê, Phelipe, Thiagão, Vini') + element.innerHTML
           event('click', '#squad-banking-capital-button', (): void => requestCodeReviewFrom([REVIEWERS.Gustavo, REVIEWERS.Male, REVIEWERS.Phelipe, REVIEWERS.Thiagao, REVIEWERS.Vini]))
         }
 
