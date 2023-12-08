@@ -110,7 +110,7 @@
     }
 
     listen(
-      'show',
+      'mount',
       (listened): boolean => listened.matches(selector),
       (listened): void => callback(listened),
     )
@@ -128,7 +128,7 @@
     }
 
     listen(
-      'hide',
+      'unmount',
       (listened): boolean => listened === element,
       (): void => callback(),
     )
@@ -137,20 +137,33 @@
   /**
    * Listen to DOM changes and trigger a custom callback based on custom criteria.
    */
-  function listen(type: 'show' | 'hide', criteria: (element: HTMLElement) => boolean, callback: (element: HTMLElement) => void): void {
-    const observer = new MutationObserver(observe)
-    observer.observe(document, { childList: true, subtree: true })
+  function listen(event: 'change' | 'mount' | 'unmount', criteria: (element: HTMLElement) => boolean, callback: (element: HTMLElement) => void): void {
+    const mutation = (record: MutationRecord[]): void => {
+      const mutations = record.filter((mutation): boolean => mutation.type === 'childList')
 
-    function observe(mutationRecords: MutationRecord[]): void {
-      const mutations = mutationRecords.filter((mutation): boolean => mutation.type === 'childList')
-      const nodes = type === 'show' ? mutations.map((mutation): Node => mutation.target) : type === 'hide' ? mutations.flatMap((mutation): Node[] => Array.from(mutation.removedNodes)) : []
+      let nodes: Node[] = []
+
+      if (event === 'change') {
+        nodes = mutations.map((mutation): Node => mutation.target)
+      } else if (event === 'mount') {
+        nodes = mutations.flatMap((mutation): Node[] => Array.from(mutation.addedNodes))
+      } else if (event === 'unmount') {
+        nodes = mutations.flatMap((mutation): Node[] => Array.from(mutation.removedNodes))
+      }
+
       const elements = nodes.filter((node): boolean => node.nodeType === Node.ELEMENT_NODE) as Array<HTMLElement>
+
       const element = elements.find(criteria)
 
       if (element) {
         callback(element)
+
         observer.disconnect()
       }
     }
+
+    const observer = new MutationObserver(mutation)
+
+    observer.observe(document, { childList: true, subtree: true })
   }
 })()
