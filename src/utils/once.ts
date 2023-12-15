@@ -5,49 +5,51 @@ interface IOnce {
 }
 
 const once: IOnce = (event, selector, callback): ReturnType<IOnce> => {
-  const selectedElement = get(selector)
+  let element: HTMLElement | null = null
 
-  if (event === 'find' && selectedElement) {
-    callback(selectedElement)
-    return
-  }
+  if (event === 'find' || event === 'unmount') element = get(selector)
 
-  const observer = new MutationObserver((records: MutationRecord[]): void => {
+  if (event === 'find' && element) return callback(element)
+
+  new MutationObserver((records: Array<MutationRecord>, observer: MutationObserver): void => {
     const mutations = records.filter((record): boolean => record.type === 'childList').reverse()
 
-    let nodes: Node[] = []
+    let nodes: Array<Node> = []
+
     switch (event) {
       case 'find':
-        nodes = mutations.map((mutation): Node => mutation.target)
+        nodes = mutations
+          .map((mutation): Node => mutation.target)
+          .filter(
+            (node): boolean =>
+              !mutations.flatMap((mutation): Array<Node> => Array.from(mutation.removedNodes)).includes(node),
+          )
+
         break
       case 'mount':
-        nodes = mutations.flatMap((mutation): Node[] => Array.from(mutation.addedNodes))
+        nodes = mutations.flatMap((mutation): Array<Node> => Array.from(mutation.addedNodes))
+
         break
       case 'unmount':
-        nodes = mutations.flatMap((mutation): Node[] => Array.from(mutation.removedNodes))
+        nodes = mutations.flatMap((mutation): Array<Node> => Array.from(mutation.removedNodes))
+
         break
     }
 
     const elements = nodes.filter((node): node is HTMLElement => node.nodeType === Node.ELEMENT_NODE)
 
-    let element: HTMLElement | undefined
     switch (event) {
       case 'find':
       case 'mount':
-        element = elements.find((listenedElement): boolean => listenedElement.matches(selector))
+        element = elements.find((found): boolean => found.matches(selector)) || null
         break
       case 'unmount':
-        element = elements.find((listenedElement): boolean => listenedElement === selectedElement)
+        element = elements.find((found): boolean => found === element) || null
         break
     }
 
-    if (element) {
-      callback(element)
-      observer.disconnect()
-    }
-  })
-
-  observer.observe(document, { childList: true, subtree: true })
+    if (element) callback(element), observer.disconnect()
+  }).observe(document, { childList: true, subtree: true })
 }
 
 export { once }
