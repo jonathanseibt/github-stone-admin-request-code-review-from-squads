@@ -4,11 +4,8 @@ interface IEvent {
 
 const event: IEvent = (event, selector, callback): void =>
   document.addEventListener(event, (event): void => {
-    if (!event.target) return
-
-    const element = event.target as HTMLElement
-
-    if (element.matches(selector)) callback(element)
+    if (!(event.target instanceof HTMLElement) || !event.target.matches(selector)) return
+    callback(event.target)
   })
 
 export { event }
