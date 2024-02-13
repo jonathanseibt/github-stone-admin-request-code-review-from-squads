@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         GitHub Stone Admin | Request review from squads
-// @version      4.2.0
+// @version      5.1.0
 // @description  New buttons to automatically request review from squads
 // @author       Jonathan Seibt (https://github.com/jonathanseibt)
 // @source       https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads
 // @match        https://github.com/dlpco/bank-admin/pull/*
 // @match        https://github.com/dlpco/bank-admin/compare/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=github.com
 // @grant        none
 // ==/UserScript==

@@ -5,6 +5,7 @@ interface IEvent {
 const event: IEvent = (event, selector, callback): void =>
   document.addEventListener(event, (event): void => {
     if (!(event.target instanceof HTMLElement) || !event.target.matches(selector)) return
+
     callback(event.target)
   })
 

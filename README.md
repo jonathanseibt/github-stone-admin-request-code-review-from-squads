@@ -4,7 +4,7 @@ This is a utility for the tribe I work for, Stone Admin, at my current job at [S
 
 | Screenshot                                                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![screenshot](https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads/assets/56838120/e923b4c8-8678-4e6c-b2d5-95e428c94c0b) |
+| ![screenshot](https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads/assets/56838120/4aee43d2-a95a-46bd-8db6-853b87857768) |
 
 </div>
 
@@ -12,6 +12,7 @@ This is a utility for the tribe I work for, Stone Admin, at my current job at [S
 
 - [Conventional Commits](https://conventionalcommits.org)
 - [pnpm](https://pnpm.io)
+- [esbuild](https://esbuild.github.io)
 - [TypeScript](https://typescriptlang.org)
 - [ESLint](https://eslint.org)
 - [Prettier](https://prettier.io)
