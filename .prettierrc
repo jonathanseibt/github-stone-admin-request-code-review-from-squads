@@ -12,10 +12,10 @@
     {
       "files": [
         "*.json",
-        ".prettierrc",
-        ".eslintrc"
+        ".prettierrc"
       ],
       "options": {
+        "trailingComma": "none",
         "printWidth": 0
       }
     },

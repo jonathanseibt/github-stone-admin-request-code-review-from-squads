@@ -1,13 +1,13 @@
 import { event, get, observe } from './core'
-import { ISquad, getAuthor, getSquads } from './util'
+import { getAuthor, getSquads, ISquad } from './util'
 
 const request = (squad: ISquad): void => {
   const author = getAuthor()
   if (!author) return
 
   const users = squad.members.map((member): number => member.user).filter((user): boolean => user !== author.user)
-  const reviewers = users.filter(
-    (user): boolean => !!get(`[data-reviewers-team-size-check-url] > span img[src*="u/${user}?"]`),
+  const reviewers = users.filter((user): boolean =>
+    Boolean(get(`[data-reviewers-team-size-check-url] > span img[src*="u/${user}?"]`)),
   )
   const allUsersAreAlreadyRequested = users.length === reviewers.length
   const shouldUnrequest = allUsersAreAlreadyRequested

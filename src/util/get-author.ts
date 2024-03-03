@@ -15,6 +15,7 @@ const getAuthor: IGetAuthor = (): ReturnType<IGetAuthor> => {
   if (!match) return null
 
   const user = Number(match[1])
+
   return { user }
 }
 

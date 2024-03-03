@@ -13,20 +13,24 @@
     "pnpm": "^8"
   },
   "scripts": {
-    "prepare": "is-ci || husky install",
+    "prepare": "is-ci || husky",
+    "build": "esbuild src/*.ts --bundle --outdir=build --allow-overwrite --minify --banner:js=\"$(cross-cat src/tampermonkey.txt)\"",
     "lint": "pnpm lint:prettier & pnpm lint:eslint & pnpm lint:tsc",
     "lint:prettier": "prettier . --write --log-level error",
-    "lint:eslint": "eslint . --fix --ext .ts --max-warnings 0",
-    "lint:tsc": "tsc --noEmit",
-    "build": "esbuild src/*.ts --bundle --outdir=build --allow-overwrite --minify --banner:js=\"$(cross-cat src/tampermonkey.txt)\""
+    "lint:eslint": "eslint . --fix --ext .js,.cjs,.mjs,.ts,.tsx --max-warnings 0",
+    "lint:tsc": "tsc --noEmit"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "7.0.1",
-    "@typescript-eslint/parser": "7.0.1",
+    "@typescript-eslint/eslint-plugin": "7.1.0",
+    "@typescript-eslint/parser": "7.1.0",
     "cross-cat": "1.0.0",
-    "esbuild": "0.20.0",
-    "eslint": "8.56.0",
-    "husky": "9.0.10",
+    "esbuild": "0.20.1",
+    "eslint": "8.57.0",
+    "eslint-plugin-folders": "1.0.4",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-simple-import-sort": "12.0.0",
+    "eslint-plugin-unicorn": "51.0.1",
+    "husky": "9.0.11",
     "is-ci": "3.0.1",
     "prettier": "3.2.5",
     "typescript": "5.3.3"
