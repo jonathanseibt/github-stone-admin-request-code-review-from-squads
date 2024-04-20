@@ -1,4 +1,4 @@
-interface ISquad {
+export interface ISquad {
   id: `squad-${string}`
   name: `Squad ${string}`
   members: Array<{
@@ -51,10 +51,6 @@ const SQUADS: Array<ISquad> = [
   },
 ] as const
 
-interface IGetSquads {
-  (): Array<ISquad>
+export function getSquads(): typeof SQUADS {
+  return SQUADS
 }
-
-const getSquads: IGetSquads = (): ReturnType<IGetSquads> => SQUADS
-
-export { getSquads, type ISquad }

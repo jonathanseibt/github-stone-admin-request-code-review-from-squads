@@ -1,7 +1,7 @@
 import { event, get, observe } from './core'
 import { getAuthor, getSquads, ISquad } from './util'
 
-const request = (squad: ISquad): void => {
+function request(squad: ISquad): void {
   const author = getAuthor()
   if (!author) return
 
@@ -14,9 +14,7 @@ const request = (squad: ISquad): void => {
 
   users.map((user): void => {
     const reviewer = get(
-      `[data-filterable-for="review-filter-field"] input[value="${user}"]${
-        shouldUnrequest ? ':checked' : ':not(:checked)'
-      }`,
+      `[data-filterable-for="review-filter-field"] input[value="${user}"]${shouldUnrequest ? ':checked' : ':not(:checked)'}`,
     )
     if (!reviewer) return
 
@@ -24,7 +22,7 @@ const request = (squad: ISquad): void => {
   })
 }
 
-const html = (squad: ISquad): string => {
+function html(squad: ISquad): string {
   let html = ''
 
   html += `<label id="${squad.id}" class="select-menu-item text-normal" role="menuitemcheckbox" aria-checked="true" tabindex="0" style="padding: 8px;">`

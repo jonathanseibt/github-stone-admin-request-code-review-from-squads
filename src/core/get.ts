@@ -1,9 +1,5 @@
 import { getAll } from '.'
 
-interface IGet {
-  (selector: string): HTMLElement | null
+export function get(selector: string): HTMLElement | null {
+  return getAll(selector)[0] || null
 }
-
-const get: IGet = (selector: string): ReturnType<IGet> => getAll(selector)[0] || null
-
-export { get }

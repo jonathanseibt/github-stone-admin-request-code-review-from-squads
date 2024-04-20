@@ -1,10 +1,6 @@
 import { get } from '../core'
 
-interface IGetAuthor {
-  (): { user: number } | null
-}
-
-const getAuthor: IGetAuthor = (): ReturnType<IGetAuthor> => {
+export function getAuthor(): { user: number } | null {
   const avatar = get('.pull-discussion-timeline > .js-discussion > .TimelineItem .TimelineItem-avatar img')
   if (!avatar) return null
 
@@ -18,5 +14,3 @@ const getAuthor: IGetAuthor = (): ReturnType<IGetAuthor> => {
 
   return { user }
 }
-
-export { getAuthor }

@@ -2,11 +2,11 @@ import { getAll } from '.'
 
 type IObserveEvent = 'find' | 'change' | 'add' | 'remove'
 
-interface IObserve {
-  (events: IObserveEvent | Array<IObserveEvent>, selector: string, callback: (elements: HTMLElement) => void): void
-}
-
-const observe: IObserve = (events, selector, callback): ReturnType<IObserve> => {
+export function observe(
+  events: IObserveEvent | Array<IObserveEvent>,
+  selector: string,
+  callback: (elements: HTMLElement) => void,
+): void {
   if (!Array.isArray(events)) events = [events]
 
   events.map((event): void => {
@@ -49,5 +49,3 @@ const observe: IObserve = (events, selector, callback): ReturnType<IObserve> => 
     }).observe(document, { childList: true, subtree: true })
   })
 }
-
-export { observe }

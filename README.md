@@ -2,9 +2,9 @@ This is a utility for the tribe I work for, Stone Admin, at my current job at [S
 
 <div align="center">
 
-| Screenshot                                                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![screenshot](https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads/assets/56838120/4aee43d2-a95a-46bd-8db6-853b87857768) |
+<picture>
+  <img src="https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads/assets/56838120/4aee43d2-a95a-46bd-8db6-853b87857768">
+</picture>
 
 </div>
 
@@ -27,7 +27,7 @@ It was built to work with the popular [Tampermonkey](https://tampermonkey.net) b
 
 ### 1. Setup
 
-Install [pnpm](https://pnpm.io) (version `^8`).
+Install [pnpm](https://pnpm.io) (version `^9`).
 
 > _It's not necessary to manually install Node.js, since pnpm itself manages the required version._
 
@@ -39,7 +39,7 @@ Install [pnpm](https://pnpm.io) (version `^8`).
 
 `pnpm i`
 
-> _At this step, pnpm will install and self-manage the required Node.js version (`18.16.0`)._
+> _At this step, pnpm will install and self-manage the required Node.js version (`20.12.2`)._
 
 ### 4. Build
 
@@ -48,8 +48,6 @@ Install [pnpm](https://pnpm.io) (version `^8`).
 ### 5. Run
 
 It was built to work with the popular [Tampermonkey](https://tampermonkey.net) browser extension. You can follow [its documentation](https://tampermonkey.net/faq.php?locale=en#Q102) and manually create a new script using the just built `build/github-stone-admin-request-code-review-from-squads.js` file.
-
-**Remember: if you want to use this repository latest version and not your own fork, see the [# Using](#using) section.**
 
 <hr />
 
