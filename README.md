@@ -3,7 +3,7 @@ This is a utility for the tribe I work for, Stone Admin, at my current job at [S
 <div align="center">
 
 <picture>
-  <img src="https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads/assets/56838120/4aee43d2-a95a-46bd-8db6-853b87857768">
+  <img src="https://github.com/jonathanseibt/github-stone-admin-request-code-review-from-squads/assets/56838120/afff27b9-f664-4f82-817d-6462366e6d7c">
 </picture>
 
 </div>
