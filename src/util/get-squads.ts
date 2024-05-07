@@ -33,6 +33,7 @@ const SQUADS: Array<ISquad> = [
     id: 'squad-banking-credit-insurance',
     name: 'Squad Banking & Credit & Insurance',
     members: [
+      { name: 'Giovani', user: 79429654 },
       { name: 'Gustavo', user: 61552991 },
       { name: 'Malê', user: 56513919 },
       { name: 'Phelipe', user: 22174013 },
