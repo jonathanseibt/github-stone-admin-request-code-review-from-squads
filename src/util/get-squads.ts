@@ -34,7 +34,6 @@ const SQUADS: Array<ISquad> = [
     name: 'Squad Banking & Credit & Insurance',
     members: [
       { name: 'Giovani', user: 79429654 },
-      { name: 'Gustavo', user: 61552991 },
       { name: 'Malê', user: 56513919 },
       { name: 'Phelipe', user: 22174013 },
       { name: 'Thiagão', user: 65300263 },
