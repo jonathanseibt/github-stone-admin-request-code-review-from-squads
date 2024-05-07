@@ -25,11 +25,11 @@ function request(squad: ISquad): void {
 function html(squad: ISquad): string {
   let html = ''
 
-  html += `<label id="${squad.id}" class="select-menu-item text-normal" role="menuitemcheckbox" aria-checked="true" tabindex="0" style="padding: 8px;">`
+  html += `<label id="${squad.id}" class="select-menu-item text-normal" role="menuitemcheckbox" aria-checked="true" tabindex="0" style="padding: 6px 0 6px 6px; border-radius: 0; border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));">`
   html += '  <div class="select-menu-item-text" style="pointer-events: none;">'
   html += '    <span class="select-menu-item-heading">'
   html += `      <span class="js-username">${squad.name}</span>`
-  html += '      <span class="description d-block js-extended-description">'
+  html += '      <span class="description d-block js-extended-description" style="max-width: unset; font-size: 10px;">'
   html += `        ${squad.members.map((member): string => member.name).join(', ')}`
   html += '      </span>'
   html += '    </span>'
